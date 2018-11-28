@@ -1,0 +1,36 @@
+{
+  "name": "wrkflw",
+  "version": "1.0.0",
+  "description": "a workflow engine for react",
+  "main": "index.js",
+  "repository": "git@github.com:xevrem/wrkflw.git",
+  "author": "erika jonell <erika.jonell@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-redux": "^5.1.1",
+    "react-router-dom": "^4.3.1"
+  },
+  "scripts": {
+    "dev": "parcel serve ./src/index.html -p 3000",
+    "test": "jest --watch"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
+    "eslint": "^5.9.0",
+    "eslint-plugin-react": "^7.11.1",
+    "gulp": "^3.9.1",
+    "jest": "^23.6.0",
+    "parcel": "^1.10.3",
+    "react-test-renderer": "^16.6.3"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>src/setuptests.js"
+  }
+}
