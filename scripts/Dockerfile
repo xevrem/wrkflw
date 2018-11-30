@@ -1,6 +1,6 @@
 FROM alpine
 WORKDIR /data
 RUN apk update
-RUN apk add nodejs npm git htop
-RUN npm i -g parcel-bundler gulp-cli
-ENTRYPOINT ["/usr/bin/npm"]
+RUN apk add nodejs npm yarn git htop bash util-linux
+RUN yarn global add parcel-bundler gulp-cli
+ENTRYPOINT ["/usr/bin/yarn"]

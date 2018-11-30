@@ -8,18 +8,4 @@ services:
      - "3000:3000"
     volumes:
      - .:/data:cached
-    command: run dev
-  test:
-    build:
-      context: ./scripts
-      dockerfile: Dockerfile
-    volumes:
-     - .:/data:cached
-    command: run test
-  install:
-    build:
-      context: ./scripts
-      dockerfile: Dockerfile
-    volumes:
-     - .:/data:cached
-    command: install
+    command: dev
