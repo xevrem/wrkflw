@@ -14,7 +14,7 @@
     "redux": "^4.0.1"
   },
   "scripts": {
-    "dev": "parcel serve ./src/index.html -p 3000",
+    "dev": "parcel ./src/index.html -p 3000",
     "test": "jest --watch"
   },
   "devDependencies": {

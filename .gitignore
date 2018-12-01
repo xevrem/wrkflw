@@ -86,3 +86,6 @@ yarn-error.log*
 
 # css files are generated
 *.css
+
+#vagrant
+.vagrant

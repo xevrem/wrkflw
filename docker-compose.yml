@@ -1,11 +1,14 @@
-version: '3'
+version: '3.7'
 services:
   dev:
     build:
       context: ./scripts
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+    - "3000:3000"
     volumes:
-      - .:/data:cached
+    - type: bind
+      source: .
+      target: /data
+      consistency: cached
     command: dev

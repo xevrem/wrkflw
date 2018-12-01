@@ -5,7 +5,9 @@ const gulp = require('gulp');
 const run = require('gulp-run');
 const del = require('del');
 
-gulp.task('default', ['dev']);
+gulp.task('default', ()=>{
+  return console.log('nothing to do');
+});
 
 gulp.task('clean', () => {
   return del(['dist','.cache']);
