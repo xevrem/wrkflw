@@ -1,6 +1,6 @@
-import {combineReducers} from 'redux';
-import workflowReducer from './workflow';
+import { combineReducers } from 'redux';
+import workflow_reducer from './workflow';
 
-export default combineReducers(
-  workflowReducer
-);
+export default combineReducers({
+  workflow_reducer
+});

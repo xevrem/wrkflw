@@ -5,7 +5,7 @@ services:
       context: ./scripts
       dockerfile: Dockerfile
     ports:
-     - "3000:3000"
+      - "3000:3000"
     volumes:
-     - .:/data:cached
+      - .:/data:cached
     command: dev

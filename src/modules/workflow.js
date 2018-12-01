@@ -1,7 +1,7 @@
 
 export const WORKFLOW_GET = 'workflow/GET';
 
-export const getWorkflow = () => ({
+export const get_workflow = () => ({
   task: WORKFLOW_GET
 });
 
