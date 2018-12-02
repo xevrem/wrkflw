@@ -1,4 +1,4 @@
-import {Foo, Bar, FooBar} from 'components/states/states';
+import {Foo, Bar, FooBar} from 'components/states';
 
 export const EVENTS = {
   NEXT: 'basic/NEXT',

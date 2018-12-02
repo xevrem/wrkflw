@@ -7,8 +7,5 @@ services:
     ports:
     - "3000:3000"
     volumes:
-    - type: bind
-      source: .
-      target: /data
-      consistency: cached
+    - .:/data:cached
     command: dev

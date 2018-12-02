@@ -20,10 +20,7 @@ export class Workflow extends React.Component{
 }
 
 Workflow.propTypes = {
-  component: PropTypes.oneOfType[
-    PropTypes.func,
-    PropTypes.element
-  ],
+  component: PropTypes.func,
   workflow: PropTypes.object,
   emit_event: PropTypes.func,
   init_workflow : PropTypes.func
