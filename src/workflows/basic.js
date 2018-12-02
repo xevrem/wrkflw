@@ -1,4 +1,4 @@
-import {Foo, Bar, FooBar} from '../components/states/states';
+import {Foo, Bar, FooBar} from 'components/states/states';
 
 export const EVENTS = {
   NEXT: 'basic/NEXT',
@@ -31,7 +31,7 @@ export const WORKFLOW = {
       }
     },
     [STATES.FOOBAR]:{
-      id: STATES.BAR,
+      id: STATES.FOOBAR,
       component:FooBar,
       transitions:{
         [EVENTS.NEXT]:STATES.FOO,
