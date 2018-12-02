@@ -8,17 +8,18 @@ export class Workflow extends React.Component{
   }
 
   render(){
-    const {Component, emit_event} = this.props;
+    const {component, emit_event} = this.props;
+    const Component = React.createElement(component, {emit:emit_event});
     return(
       <div className='workflow-main'>
-        {Component ? (<Component emit={emit_event}/>) : ''}
+        {Component}
       </div>
     );
   }
 }
 
 Workflow.propTypes = {
-  Component: PropTypes.oneOfType[
+  component: PropTypes.oneOfType[
     PropTypes.func,
     PropTypes.element
   ],
