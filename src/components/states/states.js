@@ -1,6 +1,6 @@
 import React from 'react';
 import {PropTypes} from 'prop-types';
-import {EVENTS} from '../../workflows/basic';
+import {EVENTS} from 'workflows/basic';
 
 export const Foo = props => (
   <div>

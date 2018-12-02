@@ -15,12 +15,16 @@
     "redux": "^4.0.1"
   },
   "scripts": {
-    "dev": "parcel serve ./src/index.html -p 3000",
-    "test": "jest --watch"
+    "dev": "parcel ./src/index.html -p 3000",
+    "test": "jest --watch",
+    "clean": "gulp clean",
+    "full-clean": "gulp full-clean"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
+    "@babel/core": "^7.0.0-0",
+    "@babel/preset-react": "^7.0.0",
     "babel-jest": "^23.6.0",
+    "babel-plugin-module-resolver": "^3.1.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "del": "^3.0.0",
@@ -36,5 +40,6 @@
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>src/setuptests.js"
-  }
+  },
+  "moduleRoots": [ "src" ]
 }
