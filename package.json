@@ -7,6 +7,7 @@
   "author": "erika jonell <erika.jonell@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-redux": "^5.1.1",
@@ -14,7 +15,7 @@
     "redux": "^4.0.1"
   },
   "scripts": {
-    "dev": "parcel ./src/index.html -p 3000",
+    "dev": "parcel serve ./src/index.html -p 3000",
     "test": "jest --watch"
   },
   "devDependencies": {
