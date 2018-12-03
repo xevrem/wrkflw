@@ -7,7 +7,6 @@ import reducer, {
   initialState
 } from 'modules/workflow';
 import {EVENTS, WORKFLOW} from 'workflows/basic';
-import cloneDeep from 'clone-deep';
 
 const mockStore = configureStore();
 
