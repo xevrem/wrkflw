@@ -1,4 +1,5 @@
 import React from 'react';
+
 export const WORKFLOW_INIT = 'workflow/INIT';
 export const EVENT_EMIT = 'event/EMIT';
 
@@ -14,7 +15,7 @@ export const emit_event = event => ({
 
 const null_state = () => (<div>null-state</div>);
 
-const initialState = {
+export const initialState = {
   workflow: {},
   current_state:{
     component: null_state, transitions:[]}

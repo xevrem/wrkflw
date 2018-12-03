@@ -7,6 +7,7 @@
   "author": "erika jonell <erika.jonell@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "clone-deep": "^4.0.1",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
@@ -21,8 +22,9 @@
     "full-clean": "gulp full-clean"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-0",
+    "@babel/core": "^7.1.6",
     "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-0",
     "babel-jest": "^23.6.0",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-preset-env": "^1.7.0",
@@ -36,10 +38,13 @@
     "gulp-run": "^1.7.1",
     "jest": "^23.6.0",
     "parcel": "^1.10.3",
-    "react-test-renderer": "^16.6.3"
+    "react-test-renderer": "^16.6.3",
+    "redux-mock-store": "^1.5.3"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>src/setuptests.js"
   },
-  "moduleRoots": [ "src" ]
+  "moduleRoots": [
+    "src"
+  ]
 }
