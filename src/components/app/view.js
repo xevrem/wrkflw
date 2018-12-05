@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { BrowserRouter } from 'react-router-dom';
-import {AppRouter} from 'components/app/router';
+import {AppPanel} from 'components/app/panel';
 import workflow_reducer from 'modules/workflow';
 
 const store = createStore(
@@ -15,7 +15,7 @@ const store = createStore(
 export const AppView = () => (
   <Provider store={store}>
     <BrowserRouter>
-      <AppRouter />
+      <AppPanel />
     </BrowserRouter>
   </Provider>
 );

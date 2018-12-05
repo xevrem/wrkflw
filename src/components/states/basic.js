@@ -1,12 +1,13 @@
 import React from 'react';
 import {PropTypes} from 'prop-types';
 import {EVENTS} from 'workflows/basic';
+import {Button, Typography} from '@material-ui/core';
 
 export const Foo = props => (
   <div>
-    <h3>Foo</h3>
-    <button onClick={()=>props.emit(EVENTS.BACK)}>back</button>
-    <button onClick={()=>props.emit(EVENTS.NEXT)}>next</button>
+    <Typography variant="h3" gutterBottom>Foo</Typography>
+    <Button onClick={()=>props.emit(EVENTS.BACK)}>back</Button>
+    <Button onClick={()=>props.emit(EVENTS.NEXT)}>next</Button>
   </div>
 );
 
@@ -16,9 +17,9 @@ Foo.propTypes = {
 
 export const Bar = props => (
   <div>
-    <h3>Bar</h3>
-    <button onClick={()=>props.emit(EVENTS.BACK)}>back</button>
-    <button onClick={()=>props.emit(EVENTS.NEXT)}>next</button>
+    <Typography variant="h3" gutterBottom>Bar</Typography>
+    <Button onClick={()=>props.emit(EVENTS.BACK)}>back</Button>
+    <Button onClick={()=>props.emit(EVENTS.NEXT)}>next</Button>
   </div>
 );
 
@@ -28,9 +29,9 @@ Bar.propTypes = {
 
 export const FooBar = props => (
   <div>
-    <h3>FooBar</h3>
-    <button onClick={()=>props.emit(EVENTS.BACK)}>back</button>
-    <button onClick={()=>props.emit(EVENTS.NEXT)}>next</button>
+    <Typography variant="h3" gutterBottom>FooBar</Typography>
+    <Button onClick={()=>props.emit(EVENTS.BACK)}>back</Button>
+    <Button onClick={()=>props.emit(EVENTS.NEXT)}>next</Button>
   </div>
 );
 

@@ -1,4 +1,7 @@
 import {Foo, Bar, FooBar} from 'components/states/advanced';
+import {
+  STATES as BASIC_STATES,
+} from './basic';
 
 export const EVENTS = {
   NEXT: 'advanced/NEXT',
@@ -20,7 +23,8 @@ export const WORKFLOW = {
       component:Foo,
       transitions: {
         [EVENTS.NEXT]:STATES.BAR,
-        [EVENTS.BACK]:STATES.FOOBAR
+        [EVENTS.BACK]:STATES.FOOBAR,
+        [EVENTS.BACK]:BASIC_STATES.BAR
       }
     },
     [STATES.BAR]:{
@@ -28,7 +32,8 @@ export const WORKFLOW = {
       component:Bar,
       transitions:{
         [EVENTS.NEXT]:STATES.FOOBAR,
-        [EVENTS.BACK]:STATES.FOO
+        [EVENTS.BACK]:STATES.FOO,
+        [EVENTS.BASIC]:BASIC_STATES.FOO
       }
     },
     [STATES.FOOBAR]:{
@@ -36,7 +41,8 @@ export const WORKFLOW = {
       component:FooBar,
       transitions:{
         [EVENTS.NEXT]:STATES.FOO,
-        [EVENTS.BACK]:STATES.BAR
+        [EVENTS.BACK]:STATES.BAR,
+        [EVENTS.BASIC]:BASIC_STATES.FOOBAR
       }
     }
   },
