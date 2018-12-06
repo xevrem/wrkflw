@@ -13,6 +13,9 @@ const styles = theme => ({
   },
   btn:{
     margin: theme.spacing.unit,
+    '&:hover':{
+      boxShadow: theme.shadows[2]
+    }
   },
 });
 
