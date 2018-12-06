@@ -5,7 +5,7 @@ import {Paper, withStyles} from '@material-ui/core';
 const styles = theme => ({
   root:{
     margin: '15px auto 15px auto',
-    width: '50%'
+    maxWidth: '50%'
   },
   paper:{
     padding: theme.spacing.unit

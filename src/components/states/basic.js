@@ -5,14 +5,15 @@ import {Button, Typography, withStyles} from '@material-ui/core';
 
 const styles = theme => ({
   root:{
-    margin: '0px'
+    margin: '0px auto 0px auto',
+    textAlign: 'center'
   },
   h3:{
     margin: theme.spacing.unit
   },
   btn:{
-    margin: theme.spacing.unit
-  }
+    margin: theme.spacing.unit,
+  },
 });
 
 const FooFn = props => {
