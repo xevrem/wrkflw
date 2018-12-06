@@ -1,40 +1,70 @@
 import React from 'react';
 import {PropTypes} from 'prop-types';
 import {EVENTS} from 'workflows/basic';
-import {Button, Typography} from '@material-ui/core';
+import {Button, Typography, withStyles} from '@material-ui/core';
 
-export const Foo = props => (
-  <div>
-    <Typography variant="h3" gutterBottom>Foo</Typography>
-    <Button onClick={()=>props.emit(EVENTS.BACK)}>back</Button>
-    <Button onClick={()=>props.emit(EVENTS.NEXT)}>next</Button>
-  </div>
-);
+const styles = theme => ({
+  root:{
+    margin: '0px'
+  },
+  h3:{
+    margin: theme.spacing.unit
+  },
+  btn:{
+    margin: theme.spacing.unit
+  }
+});
 
-Foo.propTypes = {
-  emit: PropTypes.func
+const FooFn = props => {
+  const {classes, emit} = props;
+  return (
+    <div className={classes.root}>
+      <Typography className={classes.h3} variant="h3" gutterBottom>Foo</Typography>
+      <Button className={classes.btn} color="primary" onClick={()=>emit(EVENTS.BACK)}>back</Button>
+      <Button className={classes.btn} color="primary" onClick={()=>emit(EVENTS.NEXT)}>next</Button>
+    </div>
+  );
 };
 
-export const Bar = props => (
-  <div>
-    <Typography variant="h3" gutterBottom>Bar</Typography>
-    <Button onClick={()=>props.emit(EVENTS.BACK)}>back</Button>
-    <Button onClick={()=>props.emit(EVENTS.NEXT)}>next</Button>
-  </div>
-);
-
-Bar.propTypes = {
-  emit: PropTypes.func
+FooFn.propTypes = {
+  emit: PropTypes.func,
+  classes: PropTypes.object
 };
 
-export const FooBar = props => (
-  <div>
-    <Typography variant="h3" gutterBottom>FooBar</Typography>
-    <Button onClick={()=>props.emit(EVENTS.BACK)}>back</Button>
-    <Button onClick={()=>props.emit(EVENTS.NEXT)}>next</Button>
-  </div>
-);
+export const Foo = withStyles(styles)(FooFn);
 
-FooBar.propTypes = {
-  emit: PropTypes.func
+const BarFn = props => {
+  const {classes, emit} = props;
+  return (
+    <div className={classes.root}>
+      <Typography className={classes.h3} variant="h3" gutterBottom>Bar</Typography>
+      <Button className={classes.btn} color="primary" onClick={()=>emit(EVENTS.BACK)}>back</Button>
+      <Button className={classes.btn} color="primary" onClick={()=>emit(EVENTS.NEXT)}>next</Button>
+    </div>
+  );
 };
+
+BarFn.propTypes = {
+  emit: PropTypes.func,
+  classes: PropTypes.object
+};
+
+export const Bar = withStyles(styles)(BarFn);
+
+const FooBarFn = props => {
+  const {classes, emit} = props;
+  return (
+    <div className={classes.root}>
+      <Typography className={classes.h3} variant="h3" gutterBottom>FooBar</Typography>
+      <Button className={classes.btn} color="primary" onClick={()=>emit(EVENTS.BACK)}>back</Button>
+      <Button className={classes.btn} color="primary" onClick={()=>emit(EVENTS.NEXT)}>next</Button>
+    </div>
+  );
+};
+
+FooBarFn.propTypes = {
+  emit: PropTypes.func,
+  classes: PropTypes.object
+};
+
+export const FooBar = withStyles(styles)(FooBarFn);

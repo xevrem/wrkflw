@@ -4,7 +4,8 @@ import {Paper, withStyles} from '@material-ui/core';
 
 const styles = theme => ({
   root:{
-    margin: theme.spacing.unit,
+    margin: '15px auto 15px auto',
+    width: '50%'
   },
   paper:{
     padding: theme.spacing.unit
