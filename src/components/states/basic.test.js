@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import {Foo, Bar, FooBar} from 'components/states';
+import {Foo, Bar, FooBar} from 'components/states/basic';
 
 describe('Foo', () => {
   it('should render without crashing', () => {

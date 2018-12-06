@@ -7,7 +7,9 @@
   "author": "erika jonell <erika.jonell@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@material-ui/core": "^3.6.1",
     "clone-deep": "^4.0.1",
+    "components": "^0.1.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",

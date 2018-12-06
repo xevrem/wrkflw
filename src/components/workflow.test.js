@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
 import {Workflow} from 'components/workflow';
-import {Foo} from 'components/states';
+import {Foo} from 'components/states/basic';
 
 describe('Workflow', () => {
   it('should render without crashing', () => {
