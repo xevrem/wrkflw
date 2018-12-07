@@ -3,7 +3,7 @@ services:
   dev:
     build:
       context: ./scripts
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     ports:
     - "3000:3000"
     volumes:
@@ -11,8 +11,8 @@ services:
     command: dev
   api:
     build:
-      context: ./scripts
-      dockerfile: Dockerfile.api
+      context: ./server
+      dockerfile: Dockerfile
     ports:
     - "8000:8000"
     volumes:
