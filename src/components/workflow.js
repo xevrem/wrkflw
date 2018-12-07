@@ -1,11 +1,14 @@
 import React from 'react';
 import {PropTypes} from 'prop-types';
-import {Paper, withStyles} from '@material-ui/core';
+import {
+  Paper,
+  withStyles
+} from '@material-ui/core';
 
 const styles = theme => ({
   root:{
-    margin: '15px auto 15px auto',
-    maxWidth: '50%'
+    width: '50%',
+    margin: '5% auto 0px auto',
   },
   paper:{
     padding: theme.spacing.unit
