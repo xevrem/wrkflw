@@ -3,9 +3,17 @@ services:
   dev:
     build:
       context: ./scripts
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     ports:
     - "3000:3000"
     volumes:
     - .:/data:cached
     command: dev
+  api:
+    build:
+      context: ./scripts
+      dockerfile: Dockerfile.api
+    ports:
+    - "8000:8000"
+    volumes:
+    - ./server:/data:cached
