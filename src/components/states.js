@@ -11,15 +11,21 @@ const styles = theme => ({
   root:{
     textAlign: 'center'
   },
+  btn:{
+    marginLeft: theme.spacing.unit,
+    '&:hover':{
+      boxShadow: theme.shadows[2]
+    }
+  }
 });
 
 export const FooBase = props => {
   const {classes,emit, valid} = props;
   return (
     <div className={classes.root}>
-      <Typography variant="h3">Foo</Typography>
-      <Button color="primary" onClick={()=>valid(EVENTS.BACK)}>back</Button>
-      <Button color="primary" onClick={()=>emit(EVENTS.NEXT)}>next</Button>
+      <Typography variant="h3" gutterBottom>Foo</Typography>
+      <Button className={classes.btn} color="primary" onClick={()=>valid(EVENTS.BACK)}>back</Button>
+      <Button className={classes.btn} color="primary" onClick={()=>emit(EVENTS.NEXT)}>next</Button>
     </div>
   );
 };
@@ -36,9 +42,9 @@ export const BarBase = props => {
   const {classes,emit} = props;
   return (
     <div className={classes.root}>
-      <Typography variant="h3">Bar</Typography>
-      <Button color="primary" onClick={()=>emit(EVENTS.BACK)}>back</Button>
-      <Button color="primary" onClick={()=>emit(EVENTS.NEXT)}>next</Button>
+      <Typography variant="h3" gutterBottom>Bar</Typography>
+      <Button className={classes.btn} color="primary" onClick={()=>emit(EVENTS.BACK)}>back</Button>
+      <Button className={classes.btn} color="primary" onClick={()=>emit(EVENTS.NEXT)}>next</Button>
     </div>
   );
 };
@@ -54,9 +60,9 @@ export const FooBarBase = props => {
   const {classes, emit} = props;
   return (
     <div className={classes.root}>
-      <Typography variant="h3">FooBar</Typography>
-      <Button color="primary" onClick={()=>emit(EVENTS.BACK)}>back</Button>
-      <Button color="primary" onClick={()=>emit(EVENTS.NEXT)}>next</Button>
+      <Typography variant="h3" gutterBottom>FooBar</Typography>
+      <Button className={classes.btn} color="primary" onClick={()=>emit(EVENTS.BACK)}>back</Button>
+      <Button className={classes.btn} color="primary" onClick={()=>emit(EVENTS.NEXT)}>next</Button>
     </div>
   );
 };

@@ -8,7 +8,7 @@ import {
 const styles = theme => ({
   root:{
     width: '50%',
-    margin: '0px auto 0px auto',
+    margin: '5% auto 0px auto',
   },
   paper:{
     padding: theme.spacing.unit
@@ -24,7 +24,7 @@ class Workflow extends React.Component{
   render(){
     const {component, emit_event, validate_event, classes} = this.props;
     const Component = React.createElement(component, {
-      emit: emit_event, 
+      emit: emit_event,
       valid: validate_event});
     return(
       <div className={classes.root}>
