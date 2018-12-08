@@ -1,8 +1,10 @@
-from bottle import route, run, response
+from aiohttp import web
+
+async def hello(request):
+    return web.Response(text='hello world')
 
 
-@route('/workflow/foo/state')
-def workflow():
-    return {'status':True}
+app = web.Application()
+app.add_routes([ web.get('/', hello) ])
 
-run(host='localhost', port=8000)
+web.run_app(app)

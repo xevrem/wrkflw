@@ -5,15 +5,16 @@ services:
       context: ./scripts
       dockerfile: Dockerfile
     ports:
-    - "3000:3000"
+      - "3000:3000"
     volumes:
-    - .:/data:cached
+      - .:/data:cached
     command: dev
   api:
     build:
       context: ./server
       dockerfile: Dockerfile
     ports:
-    - "8000:8000"
+      - "8000:8000"
     volumes:
-    - ./server:/data:cached
+      - ./server:/data:cached
+    command: run python app.py
