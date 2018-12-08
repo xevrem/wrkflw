@@ -1,5 +1,4 @@
-FROM alpine
-RUN apk add --no-cache --update python3 git htop bash
+FROM python:3.7
 RUN pip3 install pipenv
 COPY . /data
 WORKDIR /data
