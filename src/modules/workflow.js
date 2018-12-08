@@ -1,7 +1,11 @@
 import React from 'react';
+import {RSAA} from 'redux-api-middleware';
 
 export const WORKFLOW_INIT = 'workflow/INIT';
-export const EVENT_EMIT = 'event/EMIT';
+export const EVENT_EMIT = 'workflow/event/EMIT';
+export const EVENT_VALIDATE_REQUEST = 'workflow/event/validate/REQUEST';
+export const EVENT_VALIDATE_SUCCESS = 'workflow/event/validate/SUCCESS';
+export const EVENT_VALIDATE_FAILED = 'workflow/event/validate/FAILED';
 
 export const init_workflow = workflow => ({
   type: WORKFLOW_INIT,
@@ -12,6 +16,37 @@ export const emit_event = event => ({
   type: EVENT_EMIT,
   payload: event
 });
+
+export const validate_event = event => {
+  return async dispatch => {
+    const actionResponse = await dispatch({
+      [RSAA]: {
+        endpoint: 'http://localhost:8000/workflows',
+        method: 'POST',
+        body: JSON.stringify(event),
+        headers:{
+          'Content-Type': 'application/json',
+        },
+        types:[
+          EVENT_VALIDATE_REQUEST,
+          EVENT_VALIDATE_SUCCESS,
+          EVENT_VALIDATE_FAILED
+        ]
+      }
+    });
+
+    if(actionResponse.error){
+      console.log('validate_event() - failed:', actionResponse);
+      throw new Error('workflow module - validate_event() - failed:', actionResponse);
+    }
+
+    if(actionResponse.json().then(data => {
+      console.log('actionResponse - json:', data);
+    }));
+
+    return actionResponse;
+  };
+};
 
 const null_state = () => (<div>null-state</div>);
 
