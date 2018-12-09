@@ -38,7 +38,7 @@ export const validate_event = event => {
     const actionResponse = await dispatch({
       [RSAA]: {
         endpoint: 'http://localhost:8000/workflows',
-        method: 'POST',
+        method: 'PUT',
         body: JSON.stringify(event),
         headers:{
           'Content-Type': 'application/json',
@@ -92,6 +92,8 @@ const reducer = (state = initialState, action) => {
         current_state: {...next_state}
       };
     }
+    case EVENT_ERROR:
+      return {...state};
     default:
       break;
   }

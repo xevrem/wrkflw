@@ -8,7 +8,7 @@ from aiohttp_session.cookie_storage import EncryptedCookieStorage
 
 from .settings import Settings
 from .views import index
-from .api import workflows_post, workflows_get
+from .api import workflows_put, workflows_get
 
 
 THIS_DIR = Path(__file__).parent
@@ -18,7 +18,7 @@ BASE_DIR = THIS_DIR.parent
 def setup_routes(app):
     app.router.add_get('/', index, name='index')
     app.router.add_get('/workflows', workflows_get, name='workflows-get')
-    app.router.add_post('/workflows', workflows_post, name='workflows-post')
+    app.router.add_put('/workflows', workflows_put, name='workflows-put')
 
 
 async def create_app():
