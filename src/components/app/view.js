@@ -4,7 +4,7 @@ import store from 'configureStore';
 import { BrowserRouter } from 'react-router-dom';
 import {MuiThemeProvider, createMuiTheme} from '@material-ui/core/styles';
 import {CssBaseline} from '@material-ui/core';
-import {AppRouter} from 'components/app/router';
+import {AppPanel} from 'components/app/panel';
 
 
 const theme = createMuiTheme({
@@ -18,7 +18,7 @@ export const AppView = () => (
     <CssBaseline/>
     <Provider store={store}>
       <BrowserRouter>
-        <AppRouter />
+        <AppPanel />
       </BrowserRouter>
     </Provider>
   </MuiThemeProvider>
