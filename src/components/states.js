@@ -20,11 +20,11 @@ const styles = theme => ({
 });
 
 export const FooBase = props => {
-  const {classes,emit, valid} = props;
+  const {classes,emit} = props;
   return (
     <div className={classes.root}>
       <Typography variant="h3" gutterBottom>Foo</Typography>
-      <Button className={classes.btn} color="primary" onClick={()=>valid(EVENTS.BACK)}>back</Button>
+      <Button className={classes.btn} color="primary" onClick={()=>emit(EVENTS.BACK)}>back</Button>
       <Button className={classes.btn} color="primary" onClick={()=>emit(EVENTS.NEXT)}>next</Button>
     </div>
   );
@@ -33,7 +33,6 @@ export const FooBase = props => {
 FooBase.propTypes = {
   emit: PropTypes.func,
   classes: PropTypes.object,
-  valid: PropTypes.func
 };
 
 export const Foo = withStyles(styles)(FooBase);

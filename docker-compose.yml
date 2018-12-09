@@ -17,4 +17,4 @@ services:
       - "8000:8000"
     volumes:
       - ./server:/data:cached
-    command: run python app.py
+    command: run adev runserver
