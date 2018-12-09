@@ -19,23 +19,26 @@ export const emit_event = event => {
     try{
       validation = await dispatch(validate_event(event));
     }catch(exception){
-      console.log('emit_event() - validation exception:', exception);
+      console.error('emit_event() - validation exception:', exception);
     }
 
-    //TODO: interrogate foo
-    console.log('emit_event() - validation:', validation);
-
-    return {
-      type: EVENT_EMIT,
-      payload: event
-    };
+    switch(validation.payload.result){
+      case 'success':
+        return dispatch({
+          type: EVENT_EMIT,
+          payload: event
+        });
+      case 'nomatch':
+      default:
+        break;
+    }
   };
 };
 
 
 export const validate_event = event => {
   return async dispatch => {
-    const actionResponse = await dispatch({
+    const response = await dispatch({
       [RSAA]: {
         endpoint: 'http://localhost:8000/workflows',
         method: 'PUT',
@@ -51,16 +54,12 @@ export const validate_event = event => {
       }
     });
 
-    if(actionResponse.error){
-      console.log('validate_event() - failed:', actionResponse);
-      throw new Error('workflow module - validate_event() - failed:', actionResponse);
+    if(response.error){
+      console.error('validate_event() - failed:', response);
+      throw new Error('workflow module - validate_event() - failed:', response);
     }
 
-    if(actionResponse.json().then(data => {
-      console.log('actionResponse - json:', data);
-    }));
-
-    return actionResponse;
+    return response;
   };
 };
 
