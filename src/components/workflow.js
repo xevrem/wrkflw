@@ -5,6 +5,7 @@ import {
   withStyles
 } from '@material-ui/core';
 
+
 const styles = theme => ({
   root:{
     width: '50%',
@@ -22,8 +23,8 @@ class Workflow extends React.Component{
   }
 
   render(){
-    const {component, emit_event, classes} = this.props;
-    const Component = React.createElement(component, {emit:emit_event});
+    const {component, emit_event, classes, mapping} = this.props;
+    const Component = component ? React.createElement(mapping[component], {emit:emit_event}):<div/>;
     return(
       <div className={classes.root}>
         <Paper className={classes.paper}>
@@ -35,11 +36,15 @@ class Workflow extends React.Component{
 }
 
 Workflow.propTypes = {
-  component: PropTypes.func,
+  component: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.func
+  ]),
   workflow: PropTypes.object,
   emit_event: PropTypes.func,
   init_workflow : PropTypes.func,
-  classes: PropTypes.object
+  classes: PropTypes.object,
+  mapping: PropTypes.object
 };
 
 export default withStyles(styles)(Workflow);

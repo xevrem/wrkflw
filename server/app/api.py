@@ -1,8 +1,13 @@
 from aiohttp import web
-import json
+
+from .models import WORKFLOW, COMPONENTS, STATES, EVENTS
 
 async def workflows_get(request):
-    return web.json_response({'hello':'world'})
+    return web.json_response({
+        'events':EVENTS,
+        'states':STATES,
+        'components':COMPONENTS,
+        'workflow':WORKFLOW})
 
 async def workflows_put(request):
     event = await request.json()

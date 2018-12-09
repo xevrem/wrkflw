@@ -63,12 +63,9 @@ export const validate_event = event => {
   };
 };
 
-const null_state = () => (<div>null-state</div>);
-
 export const initialState = {
   workflow: {},
-  current_state:{
-    component: null_state, transitions:[]}
+  current_state: null
 };
 
 const reducer = (state = initialState, action) => {

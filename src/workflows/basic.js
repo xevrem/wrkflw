@@ -1,14 +1,26 @@
 import {Foo, Bar, FooBar} from 'components/states/basic';
 
 export const EVENTS = {
-  NEXT: 'basic/NEXT',
-  BACK: 'basic/BACK'
+  NEXT: 'events/basic/NEXT',
+  BACK: 'events/basic/BACK'
 };
 
 export const STATES = {
-  FOO:'basic/FOO',
-  BAR:'basic/BAR',
-  FOOBAR:'basic/FOOBAR'
+  FOO:'states/basic/FOO',
+  BAR:'states/basic/BAR',
+  FOOBAR:'states/basic/FOOBAR'
+};
+
+export const COMPONENTS = {
+  FOO:'components/basic/FOO',
+  BAR:'components/basic/BAR',
+  FOOBAR:'components/basic/FOOBAR'
+};
+
+export const COMPONENT_MAPPING = {
+  [COMPONENTS.FOO]:Foo,
+  [COMPONENTS.BAR]:Bar,
+  [COMPONENTS.FOOBAR]: FooBar
 };
 
 export const WORKFLOW = {
@@ -16,7 +28,7 @@ export const WORKFLOW = {
   states:{
     [STATES.FOO]:{
       id: STATES.FOO,
-      component:Foo,
+      component:COMPONENTS.FOO,
       transitions: {
         [EVENTS.NEXT]:STATES.BAR,
         [EVENTS.BACK]:STATES.FOOBAR
@@ -24,7 +36,7 @@ export const WORKFLOW = {
     },
     [STATES.BAR]:{
       id: STATES.BAR,
-      component:Bar,
+      component:COMPONENTS.BAR,
       transitions:{
         [EVENTS.NEXT]:STATES.FOOBAR,
         [EVENTS.BACK]:STATES.FOO
@@ -32,7 +44,7 @@ export const WORKFLOW = {
     },
     [STATES.FOOBAR]:{
       id: STATES.FOOBAR,
-      component:FooBar,
+      component:COMPONENTS.FOOBAR,
       transitions:{
         [EVENTS.NEXT]:STATES.FOO,
         [EVENTS.BACK]:STATES.BAR
