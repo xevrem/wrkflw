@@ -19,7 +19,7 @@ const styles = theme => ({
 class Workflow extends React.Component{
 
   componentDidMount(){
-    this.props.init_workflow(this.props.workflow);
+    this.props.init_workflow();
   }
 
   render(){
@@ -40,7 +40,6 @@ Workflow.propTypes = {
     PropTypes.string,
     PropTypes.func
   ]),
-  workflow: PropTypes.object,
   emit_event: PropTypes.func,
   init_workflow : PropTypes.func,
   classes: PropTypes.object,
