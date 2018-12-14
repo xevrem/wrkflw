@@ -19,7 +19,6 @@ export const init_workflow = () => {
       type: WORKFLOW_INIT,
       payload: response.payload.workflow
     });
-
   };
 };
 

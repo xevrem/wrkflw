@@ -3,12 +3,12 @@ import {RSAA} from 'redux-api-middleware';
 export const API_GET_REQUEST = 'api/get/REQUEST';
 export const API_GET_SUCCESS = 'api/get/SUCCESS';
 export const API_GET_FAILURE = 'api/get/FAILURE';
-export const API_POST_REQUEST = 'api/post/';
+export const API_POST_REQUEST = 'api/post/REQUEST';
 export const API_POST_SUCCESS = 'api/post/SUCCESS';
 export const API_POST_FAILURE = 'api/post/FAILURE';
-export const API_PUT_REQUEST = 'api/post/REQUEST';
-export const API_PUT_SUCCESS = 'api/post/SUCCESS';
-export const API_PUT_FAILURE = 'api/post/FAILURE';
+export const API_PUT_REQUEST = 'api/put/REQUEST';
+export const API_PUT_SUCCESS = 'api/put/SUCCESS';
+export const API_PUT_FAILURE = 'api/put/FAILURE';
 
 const merge_endpoint = endpoint => 'http://localhost:8000'+endpoint;
 
