@@ -33,7 +33,7 @@ export const emit_event = event => {
     if(response.error){
       console.error(response.payload.name, response.payload.message);
     }
-
+    console.log(response);
     switch(response.payload.result){
       case 'success':
         return dispatch({

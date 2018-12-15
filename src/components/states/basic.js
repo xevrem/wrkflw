@@ -24,7 +24,7 @@ const FooFn = props => {
   return (
     <div className={classes.root}>
       <Typography className={classes.h3} variant="h3" gutterBottom>Foo</Typography>
-      <Button className={classes.btn} color="primary" onClick={()=>emit(EVENTS.BACK)}>back</Button>
+      <Button className={classes.btn} color="primary" onClick={()=>emit('foobar')}>back</Button>
       <Button className={classes.btn} color="primary" onClick={()=>emit(EVENTS.NEXT)}>next</Button>
     </div>
   );

@@ -23,6 +23,7 @@ export const get = ({
       'Content-Type': 'application/json',
       ...headers
     },
+    credentials:'include',
     types:[
       API_GET_REQUEST,
       API_GET_SUCCESS,
@@ -44,6 +45,7 @@ export const post = ({
       'Content-Type': 'application/json',
       ...headers
     },
+    credentials:'include',
     types:[
       API_POST_REQUEST,
       API_POST_SUCCESS,
@@ -65,6 +67,7 @@ export const put = ({
       'Content-Type': 'application/json',
       ...headers
     },
+    credentials:'include',
     types:[
       API_PUT_REQUEST,
       API_PUT_SUCCESS,

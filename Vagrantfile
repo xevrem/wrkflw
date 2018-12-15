@@ -9,10 +9,13 @@ Vagrant.configure("2") do |config|
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
+  config.vm.provider "hyperv"
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "generic/arch"
+  # NOTE: gernic/alpine cannot mount on hyperv withou cifs-utils
+  # after it 'fails' ssh into it and install them
+  config.vm.box = "generic/alpine38"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -24,6 +27,7 @@ Vagrant.configure("2") do |config|
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # NOTE: This will enable public access to the opened port
   config.vm.network :forwarded_port, guest: 3000, host: 3000
+  config.vm.network :forwarded_port, guest: 8000, host: 8000
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine and only allow access
@@ -43,7 +47,7 @@ Vagrant.configure("2") do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  config.vm.synced_folder ".", "/vagrant"#, type: "rsync", rsync__exclude: ".git/", rsync__auto: true
+  config.vm.synced_folder ".", "/vagrant"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -59,12 +63,8 @@ Vagrant.configure("2") do |config|
   #
   # View the documentation for the provider you are using for more
   # information on available options.
-  config.vm.provider "virtualbox" do |vb|
-    vb.cpus = "4"
-    vb.memory = "4096"
-  end
   config.vm.provider "hyperv" do |hv|
-    hv.cpus = "4"
+    hv.cpus = "8"
     hv.maxmemory = "4096"
   end
 
