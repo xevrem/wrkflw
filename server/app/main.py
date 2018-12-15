@@ -26,6 +26,9 @@ def setup_cors_routes(cors, app):
     cors.add(resource.add_route('GET', workflows_get))
     cors.add(resource.add_route('PUT', workflows_put))
 
+    resource = cors.add(app.router.add_resource('/workflows/init'))
+
+
 async def create_app():
     app = web.Application()
     settings = Settings()
